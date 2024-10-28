@@ -44,12 +44,13 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Returns a dictionary containing the following key-value pairs:
+
         Args:
-        - page_size - the length of the returned dataset page
-        - page - the current page number
+            - page_size - the length of the returned dataset page
+            - page - the current page number
 
         Return:
-        - a dictionary containing the following key-value pairs:
+            - a dictionary containing the following key-value pairs:
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
