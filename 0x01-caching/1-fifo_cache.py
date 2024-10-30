@@ -24,10 +24,7 @@ class FIFOCache(BaseCaching):
             print(f"DISCARD: {least_used}")
 
     def get(self, key):
-        # if key is None or key not in self.cache_data:
-        #     return
+        """returns the get value for the key"""
+        if key is None or key not in self.cache_data:
+            return
         return self.cache_data.get(key, None)
-
-
-# least_used = min(self.cache_data, key=self.cache_data.get)
-# del self.cache_data[least_used]
