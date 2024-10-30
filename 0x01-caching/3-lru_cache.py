@@ -29,6 +29,7 @@ class LRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
+        """to remove the least used item"""
         if key is not None and key in self.cache_data:
             self.cache_data.move_to_end(key, last=False)
         """returns the get value for the key"""
