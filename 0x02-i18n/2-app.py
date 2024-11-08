@@ -16,7 +16,7 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale():
   """gets a locale timezone"""
-  lang = request.accept_languages.best_match(app.config('LANGUAGES'))
+  lang = request.accept_languages.best_match(app.config['LANGUAGES'])
   return lang
 
 @app.route('/')
