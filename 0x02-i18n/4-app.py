@@ -17,16 +17,22 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-  """gets a locale timezone"""
-  locale = request.args.get('locale')
-  if locale in app.config['LANGUAGES']:
-      return locale
-  # return request.accept_languages.best_match(app.config['LANGUAGES'])
+    """
+    Determines the best match for supported languages.
+    
+    Checks for 'locale' parameter in the URL and uses it if valid.
+    """
+    locale = request.args.get('locale')
+    if locale in app.config['LANGUAGES']:
+        return locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 @app.route('/')
 def index():
-  """rendering a flask app"""
-  return render_template('2-index.html')
+    """
+    Renders the index page, displaying a welcome message.
+    """
+    return render_template("4-index.html")
 
 if __name__ == '__main__':
   app.run(debug=True)
